@@ -1,0 +1,47 @@
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #6EA023;
+    }
+
+    h1 {
+        text-align: center;
+        background-color: #131418;
+        color: #fff;
+        padding: 110px;
+        margin: 0;
+        font-size: 50px;
+    }
+
+    #map {
+        height: 400px;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 100px;
+        background-color: #fff;
+        border-radius: 5px;
+    }
+
+    .food-bank {
+        margin-bottom: 20px;
+        padding: 10px;
+        background-color: #f0f0f0;
+        border-radius: 5px;
+    }
+
+    .food-bank h3 {
+        margin: 0;
+    }
+
+    .food-bank p {
+        margin: 10px 0;
+    
+
+

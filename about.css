@@ -1,0 +1,13 @@
+body {
+    background-image: url('https://img.freepik.com/free-photo/composition-delicious-fresh-vegetables-with-copy-space_23-2148642972.jpg?w=1060&t=st=1698543966~exp=1698544566~hmac=03dbd69b23b18b691e4cc829e8c5e78918c20e6ed2e07358f8a1485e2e96ad2f'); /* Replace 'your-background-image.jpg' with the actual path to your background image */
+    background-size: cover; /* Adjust the size as needed (cover, contain, or specific dimensions) */
+    background-repeat: no-repeat; /* Prevent image from repeating */
+    background-attachment: fixed;
+    /* Keep the background fixed while scrolling */
+    /* You can add more background properties or adjust these as necessary */
+.about-section-block {
+      margin-top: 100px; /* Adjust the margin value as needed */
+  }
+
+
+}

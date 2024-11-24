@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="locations.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HungerHeroes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+    <link rel="stylesheet" href="style.css"> <!-- Add the Chatbot CSS here -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0"> <!-- Add the Chatbot CSS here -->
+    <script src="script.js" defer></script>
+    <script src="script.js" defer></script> <!-- Add the Chatbot JavaScript here -->
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a class="logo" href="index.html">HungerHeroes<span>.</span></a>
+            <ul class="menu-links">
+                <span id="close-menu-btn" class="material-symbols-outlined">close</span>
+                <li><a href="The Problem.html">The Problem</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="locations.html">Locations</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+
+            </ul>
+            <span id="hamburger-btn" class="material-symbols-outlined">menu</span>
+        </nav>
+    </header>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #131418; /* Set the background color to black */
+        }
+
+        #map {
+            height: 400px; /* Define a specific height for the map container */
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 60px auto 0;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            z-index: 2;
+        }
+
+        .food-bank {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 0px;
+        }
+
+        .food-bank h3 {
+            margin: 0;
+        }
+
+        .food-bank p {
+            margin: 10px 0;
+        }
+
+        h1 {
+            margin-top: 20px; /* Add margin-top to push the title down */
+        }
+    </style>
+</head>
+<body>
+    <h1>Charlotte Homeless Shelters</h1>
+    <div class="container">
+        <h2>Homeless Shelters in Charlotte</h2>
+        <div class="food-bank">
+            <h3>Roof Above</h3>
+            <p><strong>Location:</strong> 1210 North Tryon Street, Charlotte, NC</p>
+        </div>
+        <div class="food-bank">
+            <h3>The Salvation Army Center of Hope Shelter</h3>
+            <p><strong>Location:</strong> 534 Spratt St, Charlotte, NC 28206</p>
+        </div>
+        <!-- Add more food banks here -->
+        <div class="food-bank">
+            <h3>Charlotte Family Housing</h3>
+            <p><strong>Location:</strong> 300 Hawthorne Ln, Charlotte, NC 28204</p>
+        </div>
+        <div class="food-bank">
+            <h3>Second Harvest Food Bank of Metrolina</h3>
+            <p><strong>Location:</strong> 500 Spratt St B, Charlotte, NC 28206</p>
+        </div>
+      <div class="food-bank">
+          <h3>Samaritan House</h3>
+          <p><strong>Location:</strong> 611 Fortune St, Charlotte, NC 28205</p>
+      </div>
+
+        <!-- Google Map -->
+        <h2>Map</h2>
+        <div id="map"></div>
+    </div>
+
+    <script>
+        function initMap() {
+            // Map Options
+            const mapOptions = {
+                center: { lat: 35.2271, lng: -80.8431 }, // Charlotte coordinates
+                zoom: 10
+            };
+
+            // Create the map
+            const map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+            // Define food bank locations
+            const foodBanks = [
+                {
+                    name: "Shelter 1",
+                    lat: 35.235978304624794,
+                    lng: -80.82968225789826,
+                },
+                {
+                    name: "Shelter 2",
+                    lat: 35.23962941283692,
+                    lng: -80.83742945036839,
+                },
+                // Add more locations here
+                {
+                    name: "Shelter 3",
+                    lat: 35.213648480211184, 
+                    lng: -80.82348711622677,
+                },
+                {
+                    name: "Shelter 4",
+                    lat: 35.2388064566052, 
+                    lng: -80.83860221474526,
+                },
+                {
+                    name: "Shelter 5",
+                    lat: 35.20274996249681,
+                    lng: -80.79875766305526,
+                },
+            ];
+
+            // Add markers for each food bank
+            foodBanks.forEach((foodBank) => {
+                const marker = new google.maps.Marker({
+                    position: { lat: foodBank.lat, lng: foodBank.lng },
+                    map: map,
+                    title: foodBank.name
+                });
+
+                // Info Window for each marker
+                const infoWindow = new google.maps.InfoWindow({
+                    content: `<div class="location"><h3>${foodBank.name}</h3></div>`
+                });
+
+                marker.addListener('click', () => {
+                    infoWindow.open(map, marker);
+                });
+            });
+        }
+    </script>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDa1-W39q97BO2K_8ETYPm6EVBkFRmitnQ&callback=initMap"></script>
+</body>
+</html>
+
+<script>
+  </script>
+  <button class="chatbot-toggler">
+      <span class="material-symbols-rounded">mode_comment</span>
+      <span class="material-symbols-outlined">close</span>
+  </button>
+  <div class="chatbot">
+      <header>
+          <h2>HungerHeroesAI</h2>
+          <span class="close-btn material-symbols-outlined">close</span>
+      </header>
+      <ul class="chatbox">
+          <li class="chat incoming">
+              <span class="material-symbols-outlined">smart_toy</span>
+              <p>Hi there 👋<br>How can I help you today?</p>
+          </li>
+      </ul>
+      <div class="chat-input">
+          <textarea placeholder="Enter a message..." spellcheck="false" required></textarea>
+          <span id="send-btn" class="material-symbols-rounded">send</span>
+      </div>
+  </div>
+  </body>
+  </html>
